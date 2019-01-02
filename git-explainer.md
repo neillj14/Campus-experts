@@ -22,16 +22,16 @@ Merging allows the team to take the changes and features they've made in one or 
 A merge conflict occurs when changes have been made in an area of one file on one branch that were made differently in the same area of another branch.
 For example, branch A might have an area of code that reads 
 ```c++
-    bool Function10(){
-        return false;
-    }
-    ```
+bool Function10(){
+    return false;
+}
+```
 and the exact same function in branch B looks like
 ```c++
 bool Function10(){
-        std::cout<<"This is a function that returns false"<<std::endl; //<-Using for Debugging
-        return false;
-    }
+    std::cout<<"This is a function that returns false"<<std::endl; //<-Using for Debugging
+    return false;
+}
 ```
 line for line through this file in both branches everything is the same except for the second line. In branch A it reads `c++ return false; ` but in branch B it reads ` std::cout<<"This is a function that returns false"<<std::endl; //<-Using for Debugging` very obviously these files aren't doing the exact same thing, however Git makes no assumptions as to what is needed and what isn't so it takes both versions and puts them on top of each other and asks you to "make it look the way you need it" and commit again. As we are able to understand that the second line in the file in branch B isn't needed and without it, both files look the same, we can remove that to leave us with Branch A's implementation and solve our conflict.
 - the 3 git states:
