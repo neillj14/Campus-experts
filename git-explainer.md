@@ -33,7 +33,7 @@ bool Function10(){
     return false;
 }
 ```
-line for line through this file in both branches everything is the same except for the second line. In branch A it reads `c++ return false; ` but in branch B it reads ` std::cout<<"This is a function that returns false"<<std::endl; //<-Using for Debugging` very obviously these files aren't doing the exact same thing, however Git makes no assumptions as to what is needed and what isn't so it takes both versions and puts them on top of each other and asks you to "make it look the way you need it" and commit again. As we are able to understand that the second line in the file in branch B isn't needed and without it, both files look the same, we can remove that to leave us with Branch A's implementation and solve our conflict.
+line for line through this file in both branches everything is the same except for the second line. In branch A it reads `return false; ` but in branch B it reads ` std::cout<<"This is a function that returns false"<<std::endl; //<-Using for Debugging` very obviously these files aren't doing the exact same thing, however Git makes no assumptions as to what is needed and what isn't so it takes both versions and puts them on top of each other and asks you to "make it look the way you need it" and commit again. As we are able to understand that the second line in the file in branch B isn't needed and without it, both files look the same, we can remove that to leave us with Branch A's implementation and solve our conflict.
 - the 3 git states:
   - modified
   A modified file has been changed from the last committed version but hasn't been staged yet.
